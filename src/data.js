@@ -1,6 +1,5 @@
 import pizza from "/pizza.png";
 import ecommerce from "/ecommerce.png";
-import admin from "/admin.png";
 import posts from "/posts.png";
 import hookbank from "/hookbank.png";
 import pizzalanding from "/pizzalanding.png";
@@ -9,10 +8,34 @@ import weather from "/weather.png";
 import billtip from "/billtip.png";
 import canvas from "/canvas.png";
 import backboard from "/backboard.png";
+import datapground from "/datapground.png";
+import gogator from "/gogator.png";
+import medical from "/medical.png";
+import medicaladmin from "/medicaladmin.png";
 
 export const projectsData = [
   {
     id: 1,
+    title: "Go-Gator",
+    description:
+      "Built a role-based dashboard system for Super Admin, Admin, and Students to manage users, tests, results, and progress tracking efficiently.",
+    languages: "Next JS | Tailwind CSS",
+    liveLinks: "https://lms-theta-seven.vercel.app/",
+    githubLink: "https://github.com/ashrafsarwar/lms",
+    img: gogator,
+  },
+  {
+    id: 2,
+    title: "Datapground",
+    description:
+      "Frontend for AI platform integrating ChatGPT & DeepSeek R1, with smart generators, Excel prediction, file transformation, and dynamic dashboards.",
+    languages: "Next JS | TypeScript | Material UI | Tailwind CSS",
+    liveLinks: "https://datapground.vercel.app/",
+    githubLink: "https://github.com/ashrafsarwar/datapground",
+    img: datapground,
+  },
+  {
+    id: 3,
     title: "E-Commerce",
     description:
       "Built a scalable MERN e-commerce app with Stripe payments, role-based access, product management, and a responsive UI, deployed on cloud platforms.",
@@ -22,17 +45,27 @@ export const projectsData = [
     img: ecommerce,
   },
   {
-    id: 2,
-    title: "Admin Panel",
+    id: 4,
+    title: "E-Medical",
     description:
-      "Built an admin panel with role-based access, dynamic product and user management, and order tracking, offering seamless control and a responsive UI for efficient operations.",
-    languages: "MongoDB | React | NodeJS | Express",
-    liveLinks: "https://ecommerceadmin-ashrafsarwar.netlify.app/",
-    githubLink: "https://github.com/ASHRAF-SARWAR/E-Commerce",
-    img: admin,
+      "Developed a full-featured client and admin interface, allowing clients to browse departments, view doctor profiles, and book appointments.",
+    languages: "Next JS | Material UI | Tailwind CSS | Chart.js ",
+    liveLinks: "https://emedical-psi.vercel.app/",
+    githubLink: "https://github.com/ashrafsarwar/E-Medical",
+    img: medical,
   },
   {
-    id: 3,
+    id: 5,
+    title: "E-Medical Admin",
+    description:
+      "Developed a full-featured client and admin interface, allowing admins to manage staff, inventory, doctor leave, and daily operations.",
+    languages: "Next JS | Material UI | Tailwind CSS | Chart.js ",
+    liveLinks: "https://e-medical-admin.vercel.app/",
+    githubLink: "https://github.com/ashrafsarwar/E-MedicalAdmin",
+    img: medicaladmin,
+  },
+  {
+    id: 6,
     title: "HookBank",
     languages: "React | Tailwind CSS | Chart.js",
     description:
@@ -42,7 +75,7 @@ export const projectsData = [
     img: hookbank,
   },
   {
-    id: 4,
+    id: 7,
     title: "Fast Pizza",
     languages: "React | Tailwind CSS | Local Storage",
 
@@ -53,10 +86,9 @@ export const projectsData = [
     img: pizza,
   },
   {
-    id: 5,
+    id: 8,
     title: "Quiz App",
     languages: "React | Tailwind CSS | Context API",
-
     description:
       "Created a quiz app with a timed question interface, score tracking, instant feedback, and detailed results, ensuring continuous user engagement.",
     liveLinks: "https://quizyourmind.netlify.app/",
@@ -64,7 +96,7 @@ export const projectsData = [
     img: quiz,
   },
   {
-    id: 6,
+    id: 9,
     title: "Weather App",
     languages: "React | Tailwind CSS | OpenWeatherMap API",
 
@@ -75,7 +107,7 @@ export const projectsData = [
     img: weather,
   },
   {
-    id: 7,
+    id: 10,
     title: "Atomic Blog",
     languages: "React | Tailwind CSS | Context API | Loacl Storage",
 
@@ -86,7 +118,7 @@ export const projectsData = [
     img: posts,
   },
   {
-    id: 7,
+    id: 11,
     title: "Bill Tip",
     languages: "React | Tailwind CSS | Loacl Storage",
 
@@ -97,7 +129,7 @@ export const projectsData = [
     img: billtip,
   },
   {
-    id: 8,
+    id: 12,
     title: "Landing Page",
     languages: "React | Tailwind CSS | Context API",
     description:
@@ -107,7 +139,7 @@ export const projectsData = [
     img: pizzalanding,
   },
   {
-    id: 9,
+    id: 13,
     title: "Canvas & Co.",
     languages: "HMTL | CSS | JavaScript",
     description:
@@ -117,7 +149,7 @@ export const projectsData = [
     img: canvas,
   },
   {
-    id: 10,
+    id: 14,
     title: "Backroads",
     languages: "HTML | CSS | JavaScript",
     description:

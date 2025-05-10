@@ -121,10 +121,7 @@ function Navbar() {
           </ul>
         </nav>
         <div className="hero-btns">
-          <a
-            href="https://wa.me/+923263712430?text=Hello%20there! Hope you will be doing well! Have a Project? Let's discuss it!"
-            target="_blank"
-          >
+          <a href="https://wa.me/+923263712430" target="_blank">
             <button className="hireBtn">Hire Me</button>
           </a>
         </div>

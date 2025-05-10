@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./About.css";
-import Pic from "/Desktop.jpg";
+import Pic from "/OrangeBG.jpg";
 import cv from "/src/CV_Ashraf Sarwar.pdf";
 
 function About({ id }) {
