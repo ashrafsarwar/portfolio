@@ -1,0 +1,357 @@
+/* Base styles for about section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  opacity: 0; /* Hidden initially for the animation */
+  transform: scale(0.8) translateZ(-200px); /* Start with smaller scale and far back */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  perspective: 1000px; /* Adds depth for 3D effect */
+  gap: 30px;
+  z-index: -1;
+}
+
+.about.visible {
+  opacity: 1; /* Make it visible */
+  transform: scale(1) translateZ(0); /* Grow to normal size and bring it forward */
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  padding: 30px 40px 0 40px;
+  width: 100%;
+}
+
+.about-desc {
+  font-size: 1.3rem;
+  color: var(--text-dark-gray);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  border: 3px solid #ff6a00;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.frame:hover .profile-picture {
+  transform: translate(10px, 10px);
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto;
+}
+
+.profile-picture {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-headings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.about-headings h1 {
+  font-size: 3.5rem;
+}
+
+.about-headings h1 span {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  color: var(--text-light-gray);
+}
+
+.about-headings p {
+  font-size: 1.3rem;
+  color: var(--text-dark-gray);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about-desc {
+  font-size: 1.3rem;
+  color: var(--text-dark-gray);
+}
+
+.about-right-content span {
+  color: var(--text-light-gray);
+}
+
+.about-right-content h1 {
+  font-size: 4rem;
+}
+
+/* Responsive Media Queries */
+
+/* Large screens (above 1200px) */
+@media (min-width: 1200px) {
+  .about-content {
+    gap: 100px;
+    padding: 80px 50px;
+    margin-top: 20px;
+  }
+  .about-headings h1 {
+    font-size: 4rem;
+  }
+  .about-headings h1 span {
+    font-size: 5rem;
+  }
+  .about-desc {
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium screens (between 992px and 1200px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px 20px;
+  }
+  .frame,
+  .profile-picture {
+    width: 350px;
+    height: 350px;
+  }
+  .about-headings h1 {
+    font-size: 3.2rem;
+  }
+  .about-headings h1 span {
+    font-size: 4rem;
+  }
+  .about-desc {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablets (between 768px and 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+  .frame,
+  .profile-picture {
+    width: 300px;
+    height: 300px;
+  }
+  .about-headings h1 {
+    font-size: 2.8rem;
+  }
+  .about-headings h1 span {
+    font-size: 3.5rem;
+  }
+  .about-desc {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small tablets and large phones (between 576px and 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .about-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .frame,
+  .profile-picture {
+    width: 280px;
+    height: 280px;
+  }
+  .about-headings h1 {
+    font-size: 2.5rem;
+  }
+  .about-headings h1 span {
+    font-size: 3rem;
+  }
+  .about-desc {
+    font-size: 1rem;
+  }
+}
+
+/* Phones (below 576px) */
+@media (max-width: 575px) {
+  .about-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .frame,
+  .profile-picture {
+    width: 250px;
+    height: 250px;
+  }
+  .about-headings h1 {
+    font-size: 2rem;
+  }
+  .about-headings h1 span {
+    font-size: 2.5rem;
+  }
+  .about-desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .about-content {
+    padding: 15px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1500px) {
+  .about-content {
+    gap: 80px;
+  }
+  .frame {
+    width: 300px;
+    height: 300px;
+  }
+  .profile-picture {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .frame {
+    width: 300px;
+    height: 300px;
+  }
+  .profile-picture {
+    width: 300px;
+    height: 300px;
+  }
+  .about-desc {
+    text-align: start;
+  }
+  .about-headings h1 {
+    font-size: 3rem;
+  }
+  .about-right-content h1 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-headings h2 {
+    font-size: 2rem;
+  }
+
+  .about-desc {
+    font-size: 1.1rem;
+  }
+
+  .about-content {
+    gap: 50px;
+  }
+  .frame {
+    width: 250px;
+    height: 250px;
+  }
+  .profile-picture {
+    width: 250px;
+    height: 250px;
+  }
+  .about-headings h1 {
+    font-size: 2.5rem;
+  }
+  .about-right-content h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 890px) {
+  .about-headings h2 {
+    font-size: 1.4rem;
+  }
+  .about-content {
+    gap: 40px;
+  }
+  .about-right-content h1 {
+    font-size: 2.6rem;
+  }
+  .frame {
+    width: 200px;
+    height: 200px;
+  }
+  .profile-picture {
+    width: 200px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 740px) {
+  .about-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .frame {
+    width: 200px;
+    height: 200px;
+  }
+  .profile-picture {
+    width: 240px;
+    height: 200px;
+  }
+  .about-right-content h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .about-headings h2 {
+    font-size: 1.2rem;
+  }
+
+  .profile-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .about-desc {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .about-content {
+    gap: 30px;
+  }
+  .about-headings h1 {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+:root {
+  --dark-gray: #1e1e1e;
+  --background-light-gray: #292828;
+  --light-gray: #f5f5f5;
+  --text-white: #ffffff;
+  --text-light-gray: #e0e0e0;
+  --text-dark-gray: #a0a0a0;
+  --text-primary-gray: #545454;
+  --bright-orange: #fc7617;
+  --dark-orange: #ff4000;
+  --orange-background: #fe8e525c;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--dark-gray);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: var(--bright-orange);
+}
+
+/* Default Styles */
+.hero-btns button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.4s ease;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.hireBtn {
+  background-color: var(--bright-orange);
+  color: var(--text-white);
+  border: 2px solid var(--bright-orange);
+}
+
+.cvBtn {
+  background-color: transparent;
+  color: var(--text-dark-gray);
+  border: 2px solid var(--text-dark-gray);
+}
+
+.hero-btns button {
+  transition: all 0.3s ease;
+}
+
+.hero-btns button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--text-white);
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.pagination-icon {
+  font-size: 3.5rem;
+  color: var(--bright-orange);
+  cursor: pointer;
+}
+
+.pagination-text {
+  font-size: 2rem;
+  color: var(--text-dark-gray);
+  font-weight: 500;
+}
+
+/* Apply styles to the scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar (for horizontal scrollbar) */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background-color); /* Background color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--bright-orange); /* Color of the scrollbar handle */
+  border-radius: 6px; /* Rounded corners for the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-orange); /* Color of the handle when hovered */
+}
+
+/* Optional: For vertical scrollbars */
+::-webkit-scrollbar-corner {
+  background: var(
+    --background-color
+  ); /* Background color of the corner (if applicable) */
+}
+
+/* Responsive Styles */
+@media (max-width: 1500px) {
+  .hero-btns button {
+    padding: 9px 28px; /* Slightly reduce padding */
+    font-size: 1.2rem; /* Adjust font size */
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-btns button {
+    padding: 9px 26px; /* Further reduce padding */
+    font-size: 1.1rem; /* Adjust font size */
+  }
+  .hero-btns {
+    gap: 15px;
+  }
+  .icon {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .pagination-icon {
+    font-size: 2.5rem;
+  }
+  .pagination-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .hero-btns button {
+    padding: 8px 24px; /* Reduce padding for smaller screens */
+    font-size: 1.1rem; /* Adjust font size */
+  }
+  .pagination-icon {
+    font-size: 2rem;
+  }
+  .pagination-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 890px) {
+  .hero-btns button {
+    padding: 7px 22px; /* Minimal padding for very small screens */
+    font-size: 1rem; /* Further reduce font size */
+  }
+  .icon {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero-btns button {
+    font-size: 0.8rem; /* Smallest font size */
+  }
+  .hero-btns {
+    gap: 15px;
+  }
+  .pagination-icon {
+    font-size: 1.8rem;
+  }
+  .pagination-text {
+    font-size: 1rem;
+  }
+}

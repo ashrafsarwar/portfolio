@@ -1,0 +1,278 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+  display: flex;
+  color: var(--text-dark-gray);
+  padding-bottom: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: color 0.4s ease;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-links a:hover {
+  color: var(--bright-orange);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background-color: var(--bright-orange);
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.logo-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--bright-orange), var(--dark-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Great Vibes", cursive;
+}
+
+.menu-icon {
+  display: none;
+  color: var(--dark-orange);
+  font-size: 40px;
+}
+
+.aside {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.aside-container {
+  display: none;
+}
+.aside-links {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.aside-container {
+  position: fixed;
+  top: 0;
+  left: -120%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.018);
+  backdrop-filter: blur(30px); /* Apply blur effect */
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  transition: left 0.4s ease;
+}
+
+.aside-container ul {
+  margin-top: 50px;
+}
+
+.aside-links {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  list-style: none;
+}
+.aside-links a {
+  position: relative;
+  display: flex;
+  color: var(--text-dark-gray);
+  padding-bottom: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: color 0.4s ease;
+  font-family: "Roboto", sans-serif;
+}
+
+.aside-links a:hover {
+  color: var(--bright-orange);
+}
+
+.aside-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background-color: var(--bright-orange);
+  transition: width 0.4s ease;
+}
+
+.aside-links a:hover::after {
+  width: 100%;
+}
+.sidebar {
+  display: none;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #e65a00;
+  transition: all 0.3s ease;
+}
+.close-btn:hover {
+  color: #e63a00;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1380px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .nav-links {
+    gap: 30px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .logo-name {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+  .aside-links {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .show {
+    display: flex;
+    left: -10%;
+  }
+
+  .aside-links a {
+    font-size: 1.5rem;
+  }
+
+  .logo-name {
+    font-size: 1.8rem;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .logo-name {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .navbar {
+    display: none;
+  }
+  .aside-links {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .show {
+    display: flex;
+    left: -10%;
+    overflow: hidden; /* Prevent internal element scrolling */
+  }
+
+  /* Prevent body scrolling when sidebar is open */
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .aside-links a {
+    font-size: 1.5rem;
+  }
+
+  .logo-name {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .asideHire {
+    display: none;
+  }
+  .logo-name {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-name {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo-name {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,80 @@
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Starts slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initially hidden */
+.portfolio {
+  opacity: 0;
+  transform: translateY(50px); /* Starts slightly lower */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible state when intersecting */
+.portfolio.visible {
+  animation: fadeIn 0.8s forwards;
+}
+/* Portfolio Layout */
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.portfolio-headings h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.portfolio-headings h1 span {
+  font-size: 4.5rem;
+  color: var(--text-light-gray);
+}
+
+.portfolio-headings p {
+  font-size: 1.3rem;
+  color: var(--text-dark-gray);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .portfolio-headings p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-headings p {
+    font-size: 1rem;
+  }
+  .portfolio-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-headings p {
+    font-size: 0.9rem;
+  }
+}

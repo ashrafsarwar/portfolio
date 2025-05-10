@@ -1,0 +1,91 @@
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Starts slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initially hidden */
+.educations {
+  opacity: 0;
+  transform: translateY(50px); /* Starts slightly lower */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible state when intersecting */
+.educations.visible {
+  animation: fadeIn 0.8s forwards;
+}
+
+/* Base styles for educations section */
+.educations {
+  margin: 30px auto;
+  padding: 0 20px;
+  opacity: 0; /* Initially hidden for animation */
+  transform: scale(0.8) translateZ(-200px); /* Initial back-to-front setup */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  perspective: 1000px; /* Adds 3D depth */
+}
+
+.educations.visible {
+  opacity: 1; /* Make visible */
+  transform: scale(1) translateZ(0); /* Back to normal size and position */
+}
+
+.educations-headings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 90%;
+  margin: auto;
+}
+
+.educations-headings h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.educations-headings h1 span {
+  font-size: 4.5rem;
+  color: var(--text-light-gray);
+}
+
+.educations-headings p {
+  font-size: 1.3rem;
+  color: var(--text-dark-gray);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Style for education content cards */
+.education-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+@media (max-width: 1200px) {
+  .educations-headings p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .educations-headings p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .educations-headings p {
+    font-size: 0.9rem;
+  }
+}

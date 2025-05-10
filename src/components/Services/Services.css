@@ -1,0 +1,141 @@
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Starts slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initially hidden */
+.services {
+  opacity: 0;
+  transform: translateY(50px); /* Starts slightly lower */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible state when intersecting */
+.services.visible {
+  animation: fadeIn 0.8s forwards;
+}
+
+.services-main {
+  margin: 30px 0;
+}
+
+/* Services Layout */
+.services {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  opacity: 0; /* Hidden initially for the animation */
+  transform: scale(0.8) translateZ(-200px); /* Start with smaller scale and far back */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  perspective: 1000px; /* Adds depth for 3D effect */
+}
+
+.services.visible {
+  opacity: 1; /* Make it visible */
+  transform: scale(1) translateZ(0); /* Grow to normal size and bring it forward */
+}
+
+.services-headings {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 70%;
+  margin: auto;
+}
+
+.services-headings h1 {
+  font-size: 3.5rem;
+}
+
+.services-headings h1 span {
+  text-align: center;
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  color: var(--text-light-gray);
+}
+
+.services-headings p {
+  font-size: 1.3rem;
+  color: var(--text-dark-gray);
+}
+
+.services-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 20px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1500px) {
+  .services-content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .services-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services-headings h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-headings h2 {
+    font-size: 2rem;
+  }
+
+  .services-headings p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 890px) {
+  .services-headings h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-headings p {
+    font-size: 1.1rem;
+  }
+
+  .services-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services-headings h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 740px) {
+  .services-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .services-headings h2 {
+    font-size: 1.6rem;
+  }
+
+  .services-headings p {
+    font-size: 0.8rem;
+    font-family: bold;
+  }
+
+  .services-content {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+}

@@ -1,0 +1,202 @@
+.education-section {
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 140px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: var(--text-dark-gray);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.018);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  cursor: pointer;
+  width: 1200px;
+}
+
+.education-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.degree-icon {
+  margin-right: 15px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.edit-icon {
+  color: var(--bright-orange);
+  font-size: 2.5rem;
+}
+
+.degree-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-light-gray);
+}
+
+.university-details {
+  margin-top: 50px;
+  margin-left: 20px;
+  width: 60%;
+  text-align: start;
+}
+
+.university-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--bright-orange);
+}
+
+.graduation-year {
+  margin: 10px 0;
+}
+
+.year-badge {
+  background-color: var(--orange-background);
+  color: var(--text-light-gray);
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.education-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-light-gray);
+  margin-top: 10px;
+  text-align: start;
+}
+
+@media (max-width: 1500px) {
+  .university-details {
+    width: 70%;
+  }
+  .education-section {
+    width: 1100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .education-section {
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px auto;
+    width: 950px;
+  }
+  .university-details {
+    text-align: start;
+    margin-top: -20px;
+    width: 100%;
+    margin: auto 0;
+  }
+
+  .degree-title {
+    font-size: 18px;
+  }
+
+  .university-name {
+    font-size: 16px;
+  }
+
+  .education-description {
+    font-size: 15px;
+    text-align: start;
+  }
+
+  .edit-icon {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .education-section {
+    width: 800px;
+  }
+  .degree-title {
+    font-size: 16px;
+  }
+
+  .university-name {
+    font-size: 15px;
+  }
+
+  .education-description {
+    font-size: 14px;
+  }
+  .edit-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 890px) {
+  .education-section {
+    padding: 20px;
+    width: 700px;
+  }
+
+  .university-details {
+    margin-top: -20px;
+  }
+
+  .degree-title {
+    font-size: 15px;
+  }
+
+  .university-name {
+    font-size: 14px;
+  }
+
+  .education-description {
+    font-size: 13px;
+  }
+  .edit-icon {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 740px) {
+  .education-section {
+    width: 500px;
+  }
+  .degree-title {
+    font-size: 14px;
+  }
+
+  .university-name {
+    font-size: 13px;
+  }
+
+  .education-description {
+    font-size: 12px;
+  }
+  .edit-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .education-section {
+    padding: 15px;
+    margin: 20px auto 0 auto;
+    width: 300px;
+  }
+  .university-details {
+    margin-top: -20px;
+  }
+  .degree-title {
+    font-size: 13px;
+  }
+
+  .university-name {
+    font-size: 12px;
+  }
+
+  .education-description {
+    font-size: 11px;
+  }
+}

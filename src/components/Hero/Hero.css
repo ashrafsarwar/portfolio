@@ -1,0 +1,384 @@
+/* Base Styles for the entire Hero component */
+.hero {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 30px 0;
+  padding: 20px 40px;
+  opacity: 0; /* Hidden initially for the animation */
+  transform: scale(0.8) translateZ(-200px); /* Start with smaller scale and far back */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  perspective: 1000px; /* Adds depth for 3D effect */
+}
+
+.hero.visible {
+  opacity: 1; /* Make it visible */
+  transform: scale(1) translateZ(0); /* Grow to normal size and bring it forward */
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50px;
+  gap: 70px;
+  padding: 60px 0;
+}
+
+/* Hero Left Section */
+.hero-left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-left h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary-gray);
+  line-height: 1.5;
+}
+
+.hero-left h3 span {
+  color: var(--text-light-gray);
+  font-style: bold;
+}
+
+.back-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(248, 119, 39, 0.1) 0%,
+    rgba(254, 110, 32, 0) 60%
+  );
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #fc7617, #ff4000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: -20px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.social-links li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid var(--text-light-gray);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.social-links li:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+  border-color: var(--bright-orange);
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark-gray);
+  font-size: 1.6rem;
+  font-family: bold;
+  transition: color 0.4s ease;
+}
+.social-links li:hover a {
+  color: var(--bright-orange);
+}
+
+/* Stats Container */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  height: 150px;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.018);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  gap: 50px;
+}
+
+.stats p span {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-light-gray);
+  font-family: "Roboto", sans-serif;
+}
+
+.stats .span {
+  color: var(--bright-orange);
+  font-size: 2.3rem;
+  font-weight: 700;
+  font-style: bold;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.stats-content hr {
+  width: 3px;
+  height: 80px;
+  margin: auto 0;
+  background-color: #5c5b5b;
+  border: none;
+}
+
+.stats hr:last-child {
+  display: none;
+}
+
+/* Hero Right Section */
+.hero-right {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.lotty-container {
+  width: 550px;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 1500px) {
+  .stats-content {
+    align-items: center;
+    padding: 30px;
+    gap: 40px;
+  }
+  .hero-content {
+    align-items: center;
+    gap: 150px;
+  }
+  .lotty-container {
+    width: 420px;
+  }
+  .stats-container {
+    margin-top: 50px;
+  }
+
+  .stats p span {
+    font-size: 1.3rem;
+  }
+  .stats .span {
+    font-size: 2.2rem;
+  }
+  .hero-content {
+    align-items: center;
+    padding: 30px;
+    gap: 80px;
+  }
+  .circle {
+    width: 300px;
+    height: 300px;
+  }
+  .back-circles {
+    width: 500px;
+    height: 500px;
+  }
+  .profile-picture {
+    width: 300px;
+    height: 300px;
+  }
+  .lotty-container {
+    width: 400px;
+    margin-left: -70px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .lotty-container {
+    width: 400px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .stats-container {
+    margin-top: 50px;
+  }
+  .stats-content {
+    gap: 30px;
+    padding: 20px;
+  }
+  .stats p span {
+    font-size: 1.2rem;
+  }
+  .stats .span {
+    font-size: 2rem;
+  }
+  .hero-content {
+    align-items: center;
+    padding: 30px;
+    gap: 80px;
+  }
+  .circle {
+    width: 280px;
+    height: 280px;
+  }
+  .back-circles {
+    width: 450px;
+    height: 450px;
+  }
+  .profile-picture {
+    width: 300px;
+    height: 300px;
+  }
+  .lotty-container {
+    width: 400px;
+    margin-left: -70px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stats-content {
+    padding: 20px;
+    margin: auto;
+  }
+  .stats p span {
+    font-size: 1rem;
+  }
+  .stats .span {
+    font-size: 1.8rem;
+  }
+  .span {
+    margin: auto;
+  }
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+  .lotty-container {
+    width: 450px;
+  }
+}
+
+@media (max-width: 890px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+  .back-circles {
+    width: 350px;
+    height: 350px;
+  }
+
+  .social-links li {
+    width: 28px;
+    height: 28px;
+  }
+  .social-links li a {
+    font-size: 1rem;
+  }
+  .stats-content {
+    gap: 25px;
+  }
+  .profile-picture,
+  .circle {
+    width: 220px;
+    height: 220px;
+  }
+  .stats-container {
+    width: 500px;
+    height: 140px;
+    padding: 0 20px;
+  }
+  .stats-content hr {
+    width: 3px;
+    height: 55px;
+  }
+  .stats p span {
+    font-size: 0.8rem;
+  }
+  .stats .span {
+    font-size: 1.5rem;
+  }
+  .lotty-container {
+    width: 400px;
+    margin-left: -20px;
+  }
+  .hero-btns {
+    gap: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+  .back-circles {
+    width: 300px;
+    height: 300px;
+  }
+  .hero-left h3 {
+    font-size: 1.6rem;
+  }
+
+  .social-links li {
+    width: 24px;
+    height: 24px;
+  }
+  .social-links li a {
+    font-size: 0.9rem;
+  }
+
+  .profile-picture,
+  .circle {
+    width: 180px;
+    height: 180px;
+  }
+  .stats-container {
+    width: 300px;
+    height: 90px;
+    padding: 0 20px;
+  }
+
+  .stats-content hr {
+    width: 2px;
+    height: 50px;
+    margin: auto 0;
+  }
+  .stats p span {
+    font-size: 0.7rem;
+  }
+  .stats .span {
+    font-size: 1rem;
+  }
+
+  .lotty-container {
+    width: 280px;
+    margin-left: -20px;
+  }
+}

@@ -1,0 +1,173 @@
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Starts slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initially hidden */
+.skills {
+  opacity: 0;
+  transform: translateY(50px); /* Starts slightly lower */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Visible state when intersecting */
+.skills.visible {
+  animation: fadeIn 0.8s forwards;
+}
+
+/* Base styles for skills section */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 30px auto 0 auto;
+  opacity: 0; /* Hidden initially for the animation */
+  transform: scale(0.8) translateZ(-200px); /* Start with smaller scale and far back */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  perspective: 1000px; /* Adds depth for 3D effect */
+}
+
+.skills.visible {
+  opacity: 1; /* Make it visible */
+  transform: scale(1) translateZ(0); /* Grow to normal size and bring it forward */
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns for larger screens */
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.skills-heading {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 70px;
+}
+.skills-headings p {
+  font-size: 1.3rem;
+  color: var(--text-dark-gray);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.skills-heading span {
+  color: var(--text-light-gray);
+}
+
+/* Individual skill cards */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-light); /* Added background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding for spacing */
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.skill-percent {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--bright-orange);
+  line-height: 2;
+}
+
+.skill-percent span {
+  font-weight: 600;
+  color: var(--text-dark-gray);
+  padding-top: 10px;
+}
+
+/* Responsiveness */
+
+/* 1500px */
+@media (max-width: 1500px) {
+  .skills-container {
+    grid-template-columns: repeat(
+      5,
+      1fr
+    ); /* 5 columns for medium-large screens */
+  }
+  .skills-heading {
+    font-size: 3.5rem;
+  }
+}
+
+/* 1200px */
+@media (max-width: 1200px) {
+  .skills-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for medium screens */
+  }
+  .skills-heading {
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+  }
+  .skill-percent {
+    font-size: 1.4rem;
+  }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .skills-heading {
+    font-size: 3.5rem;
+  }
+  .skill-percent {
+    font-size: 1.3rem;
+  }
+}
+
+/* 890px */
+@media (max-width: 890px) {
+  .skills-container {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 columns for smaller medium screens */
+    gap: 7px;
+  }
+  .skills-heading {
+    font-size: 3rem;
+  }
+  .skill-percent {
+    font-size: 1.2rem;
+  }
+}
+
+/* 740px */
+@media (max-width: 740px) {
+  .skills-heading {
+    font-size: 2rem;
+  }
+  .skill-percent {
+    font-size: 0.9rem;
+  }
+}
+
+/* 550px */
+@media (max-width: 550px) {
+  .skills-heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  .skill-percent {
+    font-size: 0.75rem;
+  }
+}
